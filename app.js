@@ -17,15 +17,27 @@ const game = {
       { name: "rare candy", quantity: 99 },
     ],
   }
-//   console.log (game); 
-// console.dir(pokemon, { maxArrayLength: null })
 
-const player = {
-    number: 59, 
-    name: "Arcanine", 
-    type: "fire",
-    hp: 90, 
-    starter: false 
-}
-console.log (player), ('name');
+console.log(pokemon[58].name);
+
 console.log(game)
+
+game.difficulty = "Medium";
+console.log (game.difficulty)
+
+game.party.push({
+  number: 1,
+  name: "Bulbasaur",
+  type: "grass",
+  hp: 45,
+  starter: true
+});
+console.log (game.party)
+
+// Filter Pokémon based on specific criteria (e.g., type)
+const selectedPokemon = pokemon.filter(p => p.type === "fire");
+
+// Add the selected Pokémon to the party
+game.party.push(...selectedPokemon.slice(0, 3));
+
+console.log (game.party)
